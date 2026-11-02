@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+  <path d="M50 10 A 40 40 0 0 1 90 50 L 50 50 Z" fill="#ef4444"/>
+  <path d="M90 50 A 40 40 0 0 1 50 90 L 50 50 Z" fill="#f87171"/>
+  <path d="M50 90 A 40 40 0 0 1 10 50 L 50 50 Z" fill="#fca5a5"/>
+  <path d="M5 45 A 40 40 0 0 1 45 5 L 45 45 Z" fill="#dc2626" transform="translate(-3, -3)"/>
+</svg>

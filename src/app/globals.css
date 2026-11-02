@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colour tokens as "r g b" so Tailwind can add alpha (bg-ok/10). */
+:root {
+  color-scheme: light;
+  --bg: 245 247 251;
+  --surface: 255 255 255;
+  --surface-2: 241 244 249;
+  --line: 226 231 239;
+  --ink: 15 23 42;
+  --muted: 100 113 136;
+  --brand: 220 38 38;
+  --ok: 16 163 106;
+  --info: 37 99 235;
+  --warn: 217 119 6;
+  --partial: 234 88 12;
+  --bad: 225 29 72;
+  --unknown: 140 152 172;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: 8 11 20;
+    --surface: 15 20 34;
+    --surface-2: 22 29 47;
+    --line: 36 45 68;
+    --ink: 232 236 245;
+    --muted: 142 154 180;
+    --ok: 45 201 140;
+    --info: 96 165 250;
+    --warn: 245 179 40;
+    --partial: 251 146 60;
+    --bad: 251 92 124;
+    --unknown: 120 133 160;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: 8 11 20;
+  --surface: 15 20 34;
+  --surface-2: 22 29 47;
+  --line: 36 45 68;
+  --ink: 232 236 245;
+  --muted: 142 154 180;
+  --ok: 45 201 140;
+  --info: 96 165 250;
+  --warn: 245 179 40;
+  --partial: 251 146 60;
+  --bad: 251 92 124;
+  --unknown: 120 133 160;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* The hero is dark in both themes: a deep navy with two soft glows and a faint grid. */
+.hero {
+  background-color: #0b1324;
+  background-image:
+    radial-gradient(55% 75% at 88% -10%, rgb(239 68 68 / 0.22), transparent 60%),
+    radial-gradient(50% 65% at 0% 0%, rgb(99 102 241 / 0.22), transparent 60%),
+    linear-gradient(180deg, #0b1324 0%, #0f1a33 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(70% 60% at 50% 30%, black, transparent 75%);
+  pointer-events: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
